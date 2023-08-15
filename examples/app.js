@@ -2,18 +2,15 @@ const App = require("../lib");
 const app = new App();
 
 app.get("/", (req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Hello, World!\n");
+  res.send("<h1>Home page</h1>");
 });
 
 app.get("/foo", (req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("bar!\n");
+  res.send("<h2>Bar!</h2>");
 });
 
-app.post("/code", (req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("this was a post request.");
+app.post("/secret", (req, res) => {
+  res.send("here's a secret.");
 });
 
 app.listen(3000);
